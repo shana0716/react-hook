@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useReducer } from 'react';
-const data = {name:'shana5'}
+const data = {name:'shana5',children:'children'}
 const myContext = createContext();
 
 function Context (props) {
@@ -22,9 +22,10 @@ export {Context, GetContextData}
 
 const nameReducer = (state,action)=>{
     switch(action.type){
-        case 'add':
-            case 'del':
-            return action.payload
+        case 'app':
+            return {...state,...action.payload}
+        case 'children':
+            return {...state,...action.payload}
         default:
             return state;
     }

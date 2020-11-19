@@ -6,8 +6,9 @@ import Others from './others';
 function App() {
   const context = GetContextData();
   const {dispath, data} = context;
+  console.log(data)
   const changeBtn = () => {
-    dispath({type:'add',payload:{name:'shana'}})
+    dispath({type:'app',payload:{name:'shana'}})
   }
   return (
     <div>
