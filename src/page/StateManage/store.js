@@ -6,10 +6,9 @@ const myState = [];
 const myContext = createContext();
 
 const myReducer = (state,action)=>{
-    debugger
     switch(action.type){
         case 'submit':
-            return state=state.push(action.payload)
+            return 'sdfsdfsdf'
         default:
             return state;
     }

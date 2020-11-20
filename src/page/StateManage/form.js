@@ -14,7 +14,7 @@ export default function () {
     }
 
     const onSubmit = () => {
-        dispath({payload:{name,sex}, type:'submit'})
+        dispath({payload:name, type:'submit'})
     }
 
     const marginTop = {marginTop:20};
