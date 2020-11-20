@@ -1,8 +1,8 @@
-import {GetContextData} from '../context'
+import { GetData } from './store'
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default function () {
-    const context = GetContextData(),{dispath} = context;
+    const context = GetData(),{dispath} = context;
     return ( 
         <div>
             children ==》 {context.data.name}

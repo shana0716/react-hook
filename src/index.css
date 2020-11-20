@@ -94,6 +94,6 @@ p,span{
   margin: 5px 0;
 }
 
-.box{
-  
+.link a{
+  display: block;
 }
