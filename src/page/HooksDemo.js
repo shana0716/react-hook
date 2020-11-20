@@ -1,28 +1,46 @@
 import React,{useState, useEffect, useReducer} from 'react';
-import { Button } from 'antd';
-import { act } from 'react-dom/test-utils';
 
 
 export default class HooksDemo extends React.Component{
 
     render(){
         return (
-            <div>
-                <div className="content-demo">
+            <div style={{textAlign:'left',padding:20,fontSize:24,height:'100%'}}>
+                <div className="content-box">
                     <p className="white"></p>
                     <p className="white content">1.useState</p>
                     <p className="white content">2.useEffect</p>
                     <p className="white content">3.useReducer</p>
                 </div>
-                <HooksDemo></HooksDemo>
+                
+                <p className='title'>useState</p>
+                <div className="dot-bottom"></div>
+                <HooksUseEffect />
+                
+                <p className='title'>useEffect</p>
+                <div className="dot-bottom"></div>
+                <HooksUseState />
+                
+                <p className='title'>useReducer</p>
+                <div className="dot-bottom"></div>
+                <HooksUseReducer />
             </div>
         )
     }
 }
 
-
-const HooksDemo = ()=>{
+const HooksUseState = () => {
     const [num,setNum] = useState(10);
+    return(
+        <div>
+            <p>{num}</p>
+            <p><button onClick={()=>setNum(num+1)}>num+1</button> <button onClick={()=>setNum(num-1)}>num-1</button></p>
+        </div>
+    )
+}
+
+
+const HooksUseEffect = ()=>{
     const [time,setTime] = useState(new Date())
     useEffect(()=>{
         let timer = setInterval(()=>{
@@ -31,31 +49,27 @@ const HooksDemo = ()=>{
         return ()=>clearInterval(timer)
     },[])
     return(
-        <div style={{textAlign:'left',padding:20}}>
-            <p>num=>{num}</p>
-            <p><Button onClick={()=>setNum(num+1)}>num+1</Button> <Button onClick={()=>setNum(num-1)}>num-1</Button></p>
-            <p>time=>{time.toLocaleTimeString()}</p>
-            <UseReducerDemo />
+        <div>
+            <p>{time.toLocaleTimeString()}</p>
         </div>
     )
 }
 
 
-const UseReducerDemo = ()=>{
+const HooksUseReducer = ()=>{
     const [names,setNames] = useReducer(nameReducer,['shana']);
     const [val,setVal] = useState('');
     return(
         <div>
-            <p>useReducer</p>
             {names.map((val,key)=>(
-                <li key={'name'+key}>{val} <Button onClick={()=>{
+                <li key={'name'+key}>{val} <button onClick={()=>{
                     let _names = [...names];
                     _names.splice(key,1);
                     setNames({type:'del',payload:_names})
-                }}>del</Button></li>
+                }}>del</button></li>
             ))}
             <input onChange={(e)=>setVal(e.target.value)} value={val} />
-            <Button onClick={()=>setNames({type:'add',payload:[...names, val]})}>新增</Button>
+            <button onClick={()=>setNames({type:'add',payload:[...names, val]})}>新增</button>
         </div>
     )
 }

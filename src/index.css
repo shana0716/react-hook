@@ -51,19 +51,22 @@ input{
 
 button{
   font-size: 20px;
-  background-color: darkgreen;
+  background-color: #1890ff;
   border: 0;
   border-radius: 3px;
   height: 30px;
   color: #ffffff;
-  width: 80px;
   margin-left: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 0 20px;
 }
 
 .title{
   color: chocolate;
   font-size: 24px;
   font-weight: bold;
+  margin-top: 10px;
 }
 
 p,span{
@@ -89,4 +92,8 @@ p,span{
   border-right-color: transparent;
   width: 0;
   margin: 5px 0;
+}
+
+.box{
+  
 }
