@@ -18,10 +18,11 @@ export default class ContextDemo extends React.Component{
             <div style={{textAlign:'left',padding:20,fontSize:24,height:'100%'}}>
                 <div className="content-box">
                     <p className="white">使用context可以避免组件套用时，多层级传值(相同数据)</p>
-                    <p className="white">使用react提供的createContext创建和useContext获取，创建后会返回Provider,Consumer</p>
-                    <p className="white content">1.Provider的value提供放置共享的数据</p>
-                    <p className="white content">2.Consumer(消费者)=>需要嵌套在生产者下面。才能通过回调的方式拿到共享的数据源;</p>
-                    <p className="white content">contextType</p>
+                    <p className="white">一、<span className="selected">createContext</span>创建和useContext获取，创建后会返回Provider,Consumer</p>
+                    <p className="white content">1.<span className="selected">Provider</span>的value提供放置共享的数据</p>
+                    <p className="white content">2.Consumer(消费者)=》需要嵌套在生产者下面。才能通过回调的方式拿到共享的数据源;</p>
+                    <p className="white">二、<span className="selected">useContext</span>接收createContext返回的对象，返回当前传入的value</p>
+                    <p className="white">三、contextType为类提供一个直接使用context的方法</p>
                 </div>
 
                 <div className="content-demo">
@@ -38,7 +39,6 @@ export default class ContextDemo extends React.Component{
                     <Provider value={{name:value}}>
                         <Component1 />
                     </Provider>
-
 
 
                 </div>
@@ -87,6 +87,7 @@ class Component3 extends React.Component{
             </div>
         )
     }
+
 }
 
 Component3.contextType = myContext;

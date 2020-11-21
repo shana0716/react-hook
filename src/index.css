@@ -96,6 +96,7 @@ p,span{
 
 .link a{
   display: block;
+  line-height: 40px;
 }
 
 table td{
@@ -109,4 +110,9 @@ thead tr:first-child{
 .operate{
   cursor: pointer;
   color: #1890ff;
+}
+
+.selected{
+  color: #4285f4;
+  font-weight: bold;
 }
