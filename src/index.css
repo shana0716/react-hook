@@ -97,3 +97,16 @@ p,span{
 .link a{
   display: block;
 }
+
+table td{
+  padding: 10px 30px;
+}
+
+thead tr:first-child{
+  color: chocolate;
+}
+
+.operate{
+  cursor: pointer;
+  color: #1890ff;
+}

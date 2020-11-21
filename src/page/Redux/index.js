@@ -29,7 +29,6 @@ export default class ReduxDemo extends Component{
     }
 
     render(){
-        console.log(store)
         return(
             <div style={{textAlign:'left',padding:20}}>
                 <div className="content-box">
@@ -45,7 +44,7 @@ export default class ReduxDemo extends Component{
                         <p><span className="title">createStore</span> 创建一个store</p>
                         <p><span className="title">dispatch:</span> ƒ dispatch(action)</p>
                         <p><span className="title">getState:</span> ƒ getState()</p>
-                        <p><span className="title">replaceReducer:</span> ƒ replaceReducer(nextReducer)  //替换最初的reducer，后面的dispath均执行替换后的reducer</p>
+                        <p><span className="title">replaceReducer:</span> ƒ replaceReducer(nextReducer)  //替换最初的reducer，后面的dispatch均执行替换后的reducer</p>
                         <p><span className="title">subscribe:</span> ƒ subscribe(listener) // 监听state改变</p>
                     </div>
                     <div style={{marginTop: 40}}>

@@ -7,14 +7,14 @@ export default function () {
     const [name, setName] = useState('');
     const [sex, setSex] = useState('');
 
-    const { dispath } = GetData();
+    const { dispatch } = GetData();
 
     const onChange = (value, set) => {
         set(value)
     }
 
     const onSubmit = () => {
-        dispath({payload:name, type:'submit'})
+        dispatch({payload:[{name:name, sex: sex}], type:'submit'})
     }
 
     const marginTop = {marginTop:20};
@@ -32,7 +32,7 @@ export default function () {
             </div>
             <button style={marginTop} onClick={onSubmit}>提交</button>
             <div className="link">
-                <Link to="/table">表单录入数据</Link>
+                <Link to="/table">查看</Link>
                 <Link to="/stateManage">stateManage</Link>
             </div>
         </div>
